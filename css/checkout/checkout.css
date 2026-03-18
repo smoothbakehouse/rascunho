@@ -822,3 +822,10 @@ body{
     scroll-margin-top: 45px;
   }
 }
+
+
+
+.sc-mobile-btn,
+.sc-mini-link{
+  text-decoration: none;
+}

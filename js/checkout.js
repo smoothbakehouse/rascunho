@@ -456,31 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ agora a UI já conhece os elementos
   updateUI();
 
-  const checkoutEl = document.getElementById('checkout');
-  const miniScroll = document.getElementById('miniScroll');
-
-  function scrollToCheckout(){
-  const checkoutAnchor = document.getElementById('checkout-anchor');
-  if(!checkoutAnchor) return;
-
-  checkoutAnchor.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
-
-  function bindScrollButton(btn){
-    if(!btn) return;
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      scrollToCheckout();
-    });
-  }
-
-  bindScrollButton(miniScroll);
-  bindScrollButton(mobileBtn);
+    const miniScroll = document.getElementById('miniScroll');
 
 });
 
