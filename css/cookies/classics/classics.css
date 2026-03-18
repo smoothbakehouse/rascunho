@@ -1,0 +1,864 @@
+/* ==================================================
+   COOKIES — SISTEMA LIMPO E ORGANIZADO
+   Estrutura:
+   1. Seção
+   2. Container
+   3. Grid
+   4. Card
+   5. Imagem
+   6. Conteúdo
+   7. Tipografia
+   8. Footer
+   9. Preço
+   10. Controles
+   11. Lightbox
+   12. Responsivo
+   ================================================== */
+
+
+/* ==================================================
+   1. SEÇÃO
+   ================================================== */
+
+.section.cookies {
+  /*background: #f8d7cf;*/
+  padding-block: 3rem;
+}
+
+.section-title {
+  color: var(--brown);
+}
+
+/* ==================================================
+   TÍTULO DE CATEGORIA — CLássicos
+   ================================================== */
+
+.category-title{
+  color: var(--brown);
+  font-family: "Regular";
+
+  /* 🔥 aumenta tamanho */
+  font-size: clamp(1.6rem, 3vw, 2rem);
+
+  /* deixa mais forte visualmente */
+  letter-spacing: .5px;
+
+  /* cria distância acima e abaixo */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  /* alinhamento elegante */
+  text-align: center;
+}
+
+/* ==================================================
+   3. GRID
+   ================================================== */
+
+.cookie-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 1.6rem;
+}
+
+
+
+/* ==================================================
+   4. CARD
+   ================================================== */
+
+.cookie-card {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  background: #F7EFE6;
+  /*background: greenyellow;*/
+  /*border: 2px solid rgba(102,64,61,.10);*/
+
+
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 0.8rem 1.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.cookie-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 22px rgba(0,0,0,.12);
+}
+
+
+/* ==================================================
+   5. IMAGEM
+   ================================================== */
+
+.cookie-card > img{
+  width: 240px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-block: .6rem;
+
+  display: block;      /* 🔥 impede espaço inline */
+  flex: 0 0 auto;      /* 🔥 impede encolher no flex row */
+
+  transition: border-radius .3s ease;
+}
+
+/* ==================================================
+   6. CONTEÚDO
+   ================================================== */
+
+.cookie-info {
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+
+/* ==================================================
+   7. TIPOGRAFIA
+   ================================================== */
+
+.cookie-card h4 {
+  font-family: 'Agency';
+
+  /* ORIGINAL */
+  /* font-size: clamp(2.7rem, 7vw, 3.2rem); primeiro */
+
+  /* 🔽 10% MENOR */
+  /* font-size: clamp(2.4rem, 6.3vw, 2.9rem); */
+
+  /* 🔽 15% MENOR */
+   /*font-size: clamp(2.3rem, 6vw, 2.7rem);*/
+
+  /* 🔽 20% MENOR */
+  /*font-size: clamp(2.1rem, 5.6vw, 2.5rem);*/
+
+ /* 🔽 Personalizado */
+   font-size: clamp(2.5rem, 6.3vw, 3.0rem);
+
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+  line-height:1; /*Título card - espaço na quebra de linha*/
+}
+
+.subinfo {
+  font-size: 0.9rem;
+  color: var(--rose);
+  margin-bottom: 1rem;
+  font-family: "Roboto";
+}
+
+.cookie-card p:not(.subinfo) {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--brown);
+  margin-bottom: 1.5rem;
+}
+
+
+/* ==================================================
+   8. FOOTER
+   ================================================== */
+
+.cookie-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+/* ==================================================
+   9. PREÇO
+   ================================================== */
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cookie-price-pill {
+  background: var(--rose);
+  padding: 0.5rem 1.5rem;
+  border-radius: 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.2s ease;
+}
+
+.cookie-price-pill .price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+/* força cor correta do preço */
+.cookie-price-pill .price-line,
+.cookie-price-pill .price-line * {
+  color: #F7EFE6;
+}
+
+.currency { font-size: 0.75em; }
+.cents { font-size: 0.7em; }
+
+.price-block .info-produto {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  color: var(--brown);
+}
+
+
+/* ==================================================
+   10. CONTROLES
+   ================================================== */
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  /*---------------Espaço entre elipses--------------*/
+  gap: 0.3rem;
+}
+
+.qty-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: transform 0.15s ease;
+  transform: translateY(-10px) scale(1);
+  transform-origin: center;
+}
+
+.qty-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background-color: var(--rose);
+  color: #F7EFE6;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+
+  /*box-shadow: 0 4px 10px rgba(0,0,0,.15);*/
+}
+
+/* HOVER */
+@media (hover: hover) and (pointer: fine) {
+  .qty-btn:hover {
+    background-color: var(--brown);
+    transform: translateY(-1px);
+  }
+}
+
+/* PRESSÃO */
+.qty-btn:active {
+  background-color: var(--brown);
+  transform: translateY(1px) scale(.95);
+  /*box-shadow: 0 2px 6px rgba(0,0,0,.12);*/
+}
+
+.qty-control:has(.qty-btn:active) .qty {
+  transform: translateY(-10px) scale(1.2);
+}
+
+.info-produto {
+  font-size: 0.75rem;
+  color: var(--brown);
+  opacity: 0.8;
+}
+
+/* ==================================================
+   12. RESPONSIVO
+   ================================================== */
+
+@media (min-width: 768px) {
+
+  .cookie-card {
+    flex-direction: row;
+    gap: 2.2rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .cookie-card > img{
+    width: clamp(240px, 32vw, 300px);
+    height: 280px;
+    border-radius: 18px; /* formato quadrado elegante */
+  }
+
+  .cookie-info { max-width: 420px; }
+
+  .cookie-footer { justify-content: flex-start; }
+
+}
+/*-----------controla somente titulo 320 mobile-----------*/
+@media (max-width:360px){
+  .cookie-card h4{
+    font-size: 2.1rem;
+  }
+}
+
+/*-------------Clássicos-------------*/
+.category-title {
+  text-align: center;
+}
+
+/*.category-title{
+  margin-top: -0.8rem;
+}*/
+
+/* ==================================================
+   MOBILE — espaço entre título e subinfo
+   ================================================== */
+/*
+@media (max-width: 768px){
+  .cookie-card h4{
+    margin-bottom: 1.2rem;
+  }
+}
+*/
+
+
+/* ==================================================
+   MOBILE — espaço entre imagem e texto
+   ================================================== */
+@media (max-width:768px){
+
+  .cookie-card > img{
+    margin-bottom: 1rem; /* aumenta só abaixo */
+  }
+
+}
+
+/* ==================================================
+   MOBILE MÉDIO — aumentar imagem sem afetar desktop
+   ================================================== */
+
+@media (min-width: 361px) and (max-width: 767px){
+
+  .cookie-card > img{
+    width: 320px;
+  }
+
+}
+
+
+/* Card novo 50/120g SELETOR DE PESO INLINE */
+/* =====================================
+   RADIO DE PESO — AJUSTE FINAL
+===================================== */
+
+.cookie-card .weight-row label{
+  flex-direction: row-reverse !important;
+  align-items: center;
+  gap: 4px;              /* 🔥 diminui espaço */
+}
+
+.cookie-card .weight-row input[type="radio"]{
+  margin-top: 0 !important;
+}
+
+/* =====================================
+   POSICIONAMENTO DO SELETOR DE PESO
+===================================== */
+
+.cookie-card .weight-row{
+  justify-content: flex-start !important; /* puxa pra esquerda */
+  margin-top: -0.4rem;                    /* puxa pra cima */
+  margin-bottom: 1.3rem;                  /* afasta dos botões */
+  margin-left: 80px;                      /* ajuste fino horizontal */
+  gap: 40px;                              /* distância entre 120g e 60g */
+}
+
+/* =====================================
+   RADIO DE PESO — TAMANHO MENOR NO CARD
+===================================== */
+
+.cookie-card .weight-row input[type="radio"]{
+  width: 20px;
+  height: 20px;
+}
+
+.cookie-card .weight-row input[type="radio"]::after{
+  width: 10px;
+  height: 10px;
+}
+
+/* MOBILE — centraliza seleção de peso */
+@media (max-width:768px){
+
+  .cookie-card .weight-row{
+    justify-content: center !important;
+    margin-left: 0;
+  }
+
+.cookie-card .weight-row input[type="radio"]{
+  width: 24px;
+  height: 24px;
+}
+
+.cookie-card .weight-row input[type="radio"]::after{
+  width: 12px;
+  height: 12px;
+}
+
+
+.cookie-card .weight-row{
+  margin-top: 1.5rem;  /* puxa pra cima pra perto da descrição */
+  margin-bottom: 2rem;                  /* afasta dos botões */
+}
+
+}
+/* =====================================
+   RADIO — FUNDO BRANCO REAL (CARD)
+   IMPORTANTE: sobrescreve estilo custom
+===================================== */
+
+.cookie-card .weight-row input[type="radio"]{
+  background: #fff !important;
+}
+
+.cookie-card .weight-row input[type="radio"]::before{
+  background: #fff !important;
+}
+
+
+/* ==================================================
+   CARROSSEL — (Instagram-like) TAMANHO IGUAL À IMAGEM ORIGINAL
+   ================================================== */
+
+.card-media{
+  position: relative;
+  overflow: hidden;
+
+  width: 240px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-block: .6rem;
+
+  flex: 0 0 auto;
+}
+
+/* trilho que desliza */
+.carousel-track{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0);
+  transition: transform .28s ease;
+  touch-action: pan-y;
+}
+
+/* cada imagem ocupa 100% do “quadro” */
+.carousel-img{
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 !important;        /* 🔥 importante: mata margens herdadas */
+  border-radius: 0 !important; /* 🔥 radius fica no container */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* setas (desktop) */
+/* ==================================================
+   CARROSSEL — SETAS MARRON (SEM FUNDO)
+   ================================================== */
+
+.carousel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  line-height: 1;
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+  color: var(--rose) !important;
+
+  cursor: pointer;
+  opacity: .9;
+  transition:
+    opacity .10s ease,
+    transform .09s ease,
+    filter .12s ease;
+
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  background: none;
+
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.carousel-btn.prev{ left: 10px; }
+.carousel-btn.next{ right: 10px; }
+
+@media (hover: hover) and (pointer: fine){
+  .carousel-btn:hover{
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+    filter: brightness(.92);
+  }
+}
+
+/* Mobile/touch: não mantém hover preso */
+@media (hover: none){
+  .carousel-btn:hover{
+    transform: translateY(-50%);
+    opacity: .9;
+  }
+}
+
+/* =========================
+   CARROSSEL — PRESS FORTE (PULA/DESCE)
+   ========================= */
+
+/* clique/toque */
+.carousel-btn:active{
+  transform: translateY(calc(-50% + 10px)) scale(.90);
+  opacity: 1;
+  filter: brightness(.9);
+}
+
+/* press garantido via JS (classe temporária) */
+.carousel-btn.is-press{
+  transform: translateY(calc(-50% + 10px)) scale(.90) !important;
+  opacity: 1 !important;
+  filter: brightness(.9) !important;
+}
+
+/* teclado (TAB/ENTER) */
+/*.carousel-btn:focus-visible{
+  outline: none;
+  transform: translateY(-50%) scale(1.05);
+  opacity: 1;
+}*/
+
+/* =========================
+   CARROSSEL — DOTS (INSTAGRAM-LIKE)
+   ========================= */
+.carousel-dots{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content; /* 🔥 evita cálculo estranho */
+  margin: 0 auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  z-index: 3; /* garante que fique acima da imagem */
+}
+
+/* bolinhas */
+.carousel-dot{
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  background: #F7EFE6;   /* BEGE Smooth */
+  opacity: .95;
+
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+/* bolinha ativa */
+.carousel-dot.is-active{
+  background: var(--brown); /* MARROM Smooth */
+  transform: scale(1.25);
+  opacity: 1;
+}
+
+/* acessibilidade */
+.carousel-dot:focus-visible{
+  outline: none;
+  transform: scale(1.35);
+}
+
+
+/* Desktop: igual ao seu .cookie-card img no desktop */
+@media (min-width: 768px){
+  .card-media{
+    width: clamp(240px, 32vw, 300px);
+    height: 280px;
+    border-radius: 18px; /* quadrado elegante */
+    margin-block: .6rem;
+  }
+}
+
+/* Mobile: igual ao seu margin-bottom */
+@media (max-width:768px){
+  .card-media{
+    margin-bottom: 1rem;
+    border-radius: 999px; /* mantém redondo */
+  }
+}
+
+/* Mobile médio: igual ao seu aumento para 320px */
+@media (min-width: 361px) and (max-width: 767px){
+  .card-media{
+    width: 320px;
+  }
+
+}
+
+
+/* ==================================================
+   ✅ FIX CLIQUE — LIGHTBOX NÃO BLOQUEIA BOTÕES (QUANDO FECHADO)
+   Motivo:
+   - .lightbox é um overlay (position: fixed; inset:0; z-index alto)
+   - Em alguns celulares/webviews, mesmo com visibility/opacity, ele pode “capturar” toque
+   Solução:
+   - pointer-events: none quando fechado
+   - pointer-events: auto quando .active
+   ================================================== */
+
+.lightbox{
+  pointer-events: none;
+}
+
+.lightbox.active{
+  pointer-events: auto;
+}/*
+
+/* ==================================================
+   LIGHTBOX (ZOOM) — REUSA O CARROSSEL
+   ================================================== */
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 46, 42, .75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+  z-index: 9999;
+
+  /* não captura clique quando fechado */
+  pointer-events: none;
+}
+
+.lightbox.active{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-content{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* o “card-media” do zoom (maior), mas com o MESMO estilo do carrossel */
+.card-media.lb-media{
+  width: min(92vw, 520px);
+  aspect-ratio: 1/1;          /* ✅ impede “imagem comprida” no mobile */
+  height: auto;               /* deixa o aspect-ratio mandar */
+  border-radius: 18px;        /* ✅ zoom elegante */
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+
+/* ==================================================
+   NÃO APAGAR | NÃO APAGAR | NÃO APAGAR |
+   LIGHTBOX — TAMANHO DO ZOOM NO DESKTOP
+   (Somente telas ≥ 768px)
+   ==================================================
+
+   COMO ALTERNAR:
+   ✔ Deixe APENAS UM bloco descomentado
+   ✔ Comente os outros dois
+
+   Opções:
+   1️⃣ 4:3  → cinematográfico premium
+   2️⃣ 1:1  → foco no produto / Instagram style
+   3️⃣ 5:4  → equilíbrio moderno (ATUAL)
+
+   ================================================== */
+
+@media (min-width: 768px){
+
+    /*==================================================
+     OPÇÃO 1 — FORMATO 4:3 (CINEMATOGRÁFICO)
+     ==================================================*/
+  .card-media.lb-media{
+    width: min(72vw, 720px);
+    aspect-ratio: 4 / 3;
+    border-radius: 22px;
+  }
+
+
+  /* ==================================================
+     OPÇÃO 2 — FORMATO QUADRADO (INSTAGRAM STYLE)
+     ==================================================
+  .card-media.lb-media{
+    width: min(65vw, 560px);
+    aspect-ratio: 1 / 1;
+    border-radius: 22px;
+  }
+  */
+
+
+  /* ==================================================
+     ⭐ OPÇÃO 3 — FORMATO 5:4 (ATIVO)
+     ==================================================
+     ✔ Mais equilibrado
+     ✔ Visual premium moderno
+     ✔ Melhor para produto
+     ================================================== */
+  /*
+  .card-media.lb-media{
+    width: min(70vw, 680px);
+    aspect-ratio: 5 / 4;
+    border-radius: 22px;
+  }
+ */
+
+}
+/* ==================================================
+    ACIMA NÃO APAGAR | NÃO APAGAR | NÃO APAGAR |
+    FIM DAS OPÇÕES DE ZOOM DESKTOP
+   ================================================== */
+
+
+/* ==================================================
+   LIGHTBOX — BOTÃO CLOSE (animação + cores invertidas)
+   Elipse: marrom | X: bege
+   ================================================== */
+
+.lightbox-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  line-height: 1;
+
+  background-color: var(--brown);
+  color: #F7EFE6;
+
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  z-index: 6;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  transition:
+    background-color .2s ease,
+    transform .14s ease,
+    opacity .14s ease,
+    filter .14s ease;
+}
+
+/* hover só em desktop */
+@media (hover: hover) and (pointer: fine){
+  .lightbox-close:hover{
+    background-color: var(--brown);
+    transform: scale(1.06);
+    filter: brightness(1.05);
+    opacity: 1;
+  }
+}
+
+.lightbox-close:active{
+  background-color: var(--brown);
+  transform: scale(.92);
+  opacity: 1;
+  filter: brightness(.98);
+}
+
+/* garante que dots/setas fiquem “dentro” da moldura no zoom */
+.card-media.lb-media .carousel-dots{
+  bottom: 14px;               /* já está absolute — só ajusta */
+  z-index: 4;
+}
+
+.card-media.lb-media .carousel-btn{
+  z-index: 4;
+}
+
+/* ==================================================
+   CARROSSEL — ESCONDER SETAS NO MOBILE (GLOBAL)
+   Aplica no:
+   ✔ carrossel normal
+   ✔ zoom/lightbox
+   ================================================== */
+
+@media (max-width: 767px){
+  .carousel-btn{
+    display: none !important;
+  }
+}

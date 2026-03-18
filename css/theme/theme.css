@@ -1,0 +1,95 @@
+/* ===============================================================
+   SISTEMA DE TEMAS — SMOOTH BAKEHOUSE
+   Apenas LIGHT e DARK
+================================================================ */
+
+/* ===== TOKENS BASE (fixos, não mudam entre temas) ===== */
+:root {
+  /* Marca */
+  --rose: #EF9C9F;
+  --brown: #66403D;
+  --beige: #FEE1C0;
+
+  /* Sombras */
+  --shadow: 0 10px 30px rgba(102, 64, 61, 0.12);
+  --shadow-strong: 0 16px 32px rgba(102, 64, 61, 0.18);
+
+  /* Borda */
+  --border: #e5d0cd;
+
+  /* Texto */
+  --text-strong: #3b2725;
+  --text-soft: #8a6b68;
+
+  /* Cores funcionais default */
+  --primary: var(--rose);
+  --secondary: var(--brown);
+
+  /* Base */
+  /*--background: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f8f5f4;*/
+
+  --text: var(--text-strong);
+  --text-muted: var(--text-soft);
+
+  /* Footer */
+  --footer-bg: var(--brown);
+  --footer-text: #f8e8e6;
+}
+
+/* ===============================================================
+   THEME: ROSE (padrão do site)
+================================================================ */
+[data-theme="rose"]{
+  --background: #F7EFE6;
+  --surface: #F7EFE6;
+  --surface-alt: #F7EFE6;
+}
+
+
+/* ===============================================================
+   THEME: LIGHT
+================================================================ */
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #faf6f5;
+
+  --text: #402926;
+  --text-muted: #7a5f5b;
+
+  --border: #e8d5d2;
+
+  --footer-bg: #66403D;
+  --footer-text: #f7e1dc;
+
+  --shadow: 0 10px 28px rgba(90, 60, 55, 0.12);
+}
+
+
+/* ===============================================================
+   THEME: DARK
+================================================================ */
+
+/*[data-theme="dark"] {
+  --background: #0f0c0c;
+  --surface: #1a1413;
+  --surface-alt: #241c1b;
+
+  --text: #f5e3e2;
+  --text-muted: #ccb8b4;
+
+  --border: #2a1f1e;
+
+  --footer-bg: #0a0707;
+  --footer-text: #e6c4bd;
+
+  --shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ===============================================================
+   FIM DO THEME.CSS
+================================================================ */

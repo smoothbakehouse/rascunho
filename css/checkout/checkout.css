@@ -1,0 +1,812 @@
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+*{ 
+  box-sizing:border-box; /* Garante cálculo correto de largura/altura */
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif; /* Fonte base */
+  background:#F7EFE6;
+}
+
+/* =========================================================
+   CHECKOUT — ÁREA GERAL
+   ========================================================= */
+.sc-checkout{
+  background: #F7EFE6;   /* Fundo Bege */
+  padding: 0.5rem 0rem 2rem;       /* Espaçamento vertical confortável */
+  color: var(--brown);
+   
+}
+
+
+/* =========================================================
+   CHECKOUT — CARD PRINCIPAL
+   ========================================================= */
+.checkout-card{
+  max-width:760px;   /* igual ao cookie-card */
+  margin-inline:auto;           /* Centraliza o card */
+  background: #F7EFE6;
+  /*border: 2px solid rgba(102,64,61,.10);*/
+
+  border-radius:22px;
+  padding:1.8rem 1.4rem;     /* Espaçamento interno */
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+@media (max-width:1024px){
+  .checkout-card{ max-width:760px; } /* mantém padrão */
+}
+
+@media (max-width:768px){
+  .checkout-card{
+    max-width:100%;
+    border-radius:18px;
+  }
+}
+
+/* =========================================================
+   CHECKOUT — CARD (MOTION SUAVE AO HOVER)
+   ========================================================= */
+
+/* hover leve — sensação de profundidade */
+.checkout-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 5px 22px rgba(0,0,0,.12);
+}
+
+/* respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce){
+  .checkout-card{
+    transition: none;
+  }
+  .checkout-card:hover{
+    transform: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  }
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+/* Título principal: "Seu pedido" */
+.checkout-card h3.section-title {
+  font-family: "Nexa Heavy", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+
+  color: var(--brown);
+
+  padding-bottom: 0.6rem;        /* espaço para underline respirar */
+  margin-bottom: 1.6rem;
+  letter-spacing: -0.01em; /* micro ajuste óptico */
+  text-align: center;
+
+  
+}
+
+
+/* Subtítulos: "Seus dados", "Forma de pagamento" etc */
+.checkout-card h4{
+  text-align:center;
+  font-family:'Nexa Heavy',sans-serif;
+  font-size:.95rem;          /* ⬆ leve aumento */
+  color:var(--brown);
+  margin-bottom:1.8rem;
+}
+
+/* =========================================================
+   BLOCOS DE CONTEÚDO
+   ========================================================= */
+.sc-block{
+  margin-top:1.8rem;          /* Espaçamento padrão entre seções */
+  text-align:center;
+}
+
+/* =========================================================
+   INPUTS DE TEXTO
+   ========================================================= */
+#checkout input[type="text"],
+#checkout input[type="tel"],
+#checkout textarea{
+  width:100%;
+  max-width:420px;
+  margin:.65rem auto 0;
+  display:block;
+
+  border:1px solid rgba(102,64,61,.25);
+  border-radius:10px;
+  padding:.75rem .9rem;
+  font-size:.9rem;
+
+  background: #ffffff;
+  color:var(--brown);
+
+  /* textarea behaviour */
+  resize: vertical;
+  max-height:220px;
+}
+
+/* Textarea */
+#checkout textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+/* Placeholder */
+#checkout input::placeholder,
+#checkout textarea::placeholder{
+  color:rgba(102,64,61,.55);
+  font-size:.8rem;
+}
+
+/* =========================
+   FOCO ROSA — INPUTS / TEXTAREA
+========================= */
+
+#checkout input:focus,
+#checkout textarea:focus {
+  outline: none; /* remove azul padrão do navegador */
+  border-color: var(--rose);
+
+  box-shadow:
+    0 0 0 3px rgba(239,156,159,.25); /* glow suave */
+}
+
+/* =========================
+   FOCO ROSA — RADIOS
+========================= */
+
+.radio-row input[type="radio"]:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(239,156,159,.25);
+}
+
+/* =========================================================
+   LINHAS DE VALOR (Subtotal / Total)
+   ========================================================= */
+.sc-line{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.95rem;           /* ⬆ leve aumento */
+  margin:0.2rem 0; /*Espaço entre linhas - lista abaixo do cupom*/
+  color:var(--brown);
+}
+
+#checkout .checkout-content > .sc-line:first-of-type{
+  font-weight: 700;
+}
+
+@media (min-width: 768px){
+  .sc-line{
+    padding: 0 10px;
+  }
+}
+
+/* Linha do Total */
+.sc-line.total{
+  margin-top:1.2rem;
+  padding-top:1.2rem;
+  border-top:1px dashed rgba(102,64,61,.25);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size:1rem;
+}
+
+/* Total só no checkout */
+#checkout .sc-line.total{
+  font-weight:700;
+}
+
+/* =========================================================
+   BOTÃO FINAL
+   ========================================================= */
+.sc-final-btn{
+  max-width:300px;
+  width:100%;
+  margin:2.4rem auto 0;
+  display:block;
+
+  background-color: var(--brown);
+  color:#F7EFE6;
+  border:none;
+  border-radius:10px;
+  padding:.75rem 1rem;
+
+  font-family:'Nexa Heavy',sans-serif;
+  font-size:.85rem;
+  cursor:pointer;
+}
+
+
+/* Estado desativado */
+.sc-final-btn.sc-muted{
+  opacity:.75;
+}
+
+
+.sc-final-btn:not(.sc-muted){
+  background-color: var(--rose);
+}
+
+/* =========================
+   BOTÃO FINAL — MOTION PADRÃO HOME
+========================= */
+
+.sc-final-btn{
+  transition:
+    background-color .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+}
+
+/* hover SOMENTE quando ativo */
+@media (hover: hover) and (pointer: fine){
+  .sc-final-btn:not(.sc-muted):hover{
+    background-color: var(--brown);
+    transform: translateY(-1px);
+    /*box-shadow: 0 8px 18px rgba(0,0,0,.18);*/
+  }
+}
+
+/* clique */
+.sc-final-btn:not(.sc-muted):active{
+  background-color: var(--brown);
+  transform: translateY(0) scale(.97);
+  /*box-shadow: 0 4px 10px rgba(0,0,0,.15);*/
+}
+
+/* =========================================================
+   RADIOS — TEXTO EM CIMA / BOLINHA EMBAIXO
+   ========================================================= */
+.radio-row{
+  display:flex;
+  justify-content:center;
+  gap:4rem;                   /* Distância entre opções */
+  margin-top:0.6rem;
+}
+
+/* Cada opção */
+.radio-row label{
+  display:flex;
+  flex-direction:column;      /* TEXTO EM CIMA */
+  align-items:center;
+  gap:.6rem;                  /* Distância texto ↔ bolinha */
+
+  font-family:Inter,Arial,sans-serif; /* ❌ sem negrito */
+  font-weight:400;            /* remove bold */
+  font-size:.9rem;            /* ⬆ leve aumento */
+  color:var(--brown);
+  cursor:pointer;
+}
+
+/* Bolinha */
+.radio-row input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 24px;                 /* número par */
+  height: 24px;                /* número par */
+  border-radius: 50%;
+
+  border: 2px solid var(--rose); /* borda inteira = centro correto */
+  background: #fff;
+
+  position: relative;
+  margin-top:1.0rem;
+}
+
+/* Miolo */
+.radio-row input[type="radio"]::after {
+  content: "";
+  width: 12px;                 /* proporção correta */
+  height: 12px;
+  border-radius: 50%;
+
+  background: var(--rose);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  transition: transform .15s ease;
+}
+
+
+/* Estado marcado */
+.radio-row input[type="radio"]:checked::after{
+  transform:translate(-50%,-50%) scale(1);
+}
+
+
+/* =========================================================
+   UTIL
+   ========================================================= */
+.sc-hidden {
+  display: none !important; /* Provavelmente para proteger botão ver pedido*/
+}
+
+
+/* =========================================================
+   BOTÃO MOBILE — INTACTO
+   ========================================================= */
+.sc-mobile-btn{
+  position:fixed;
+  bottom:1rem;
+  left:1rem;
+  right:1rem;
+  padding:0.6rem;
+  border-radius:12px;
+  background-color: var(--rose);
+  color:#F7EFE6;
+  border:none;
+  z-index: 9999;
+  font-weight:700;
+  letter-spacing:0.02em;
+  display:none;
+  justify-content: center;
+  gap: 10px;
+  align-items:center;
+
+  touch-action: manipulation;
+  transition: background-color .2s ease, transform .12s ease;
+}
+/*------- espaço entre ver pedido e total no botao mobile-------*/
+/*#mobileTotal{
+  margin-left: 7px;
+}*/
+
+.sc-mobile-btn:active{
+  background-color: var(--brown);
+  transform: scale(.98);
+}
+
+
+/* Regras de visibilidade */
+@media (max-width:768px){
+  .sc-mini-cart{ display:none!important; }
+}
+@media (min-width:769px){
+  .sc-mobile-btn{ display:none!important; }
+}
+
+/* =========================
+   CUPOM — ESPAÇAMENTO
+========================= */
+
+/* distância do input para o botão */
+#checkout #coupon{
+  margin-bottom: 1rem; /* aumente se quiser mais */
+}
+
+/* =========================
+   BOTÃO — APLICAR CUPOM (PADRÃO HOME)
+========================= */
+
+#checkout #applyCoupon{
+  display: block;
+  margin: auto;
+
+  padding: .7rem 1.8rem;
+  border-radius: 10px;
+  border: none;
+
+  background-color: var(--rose);
+  color: #F7EFE6;
+
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: .8rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color .2s ease,
+    transform .15s ease,
+    box-shadow .2s ease;
+}
+
+/* hover — mesmo padrão do botão principal */
+@media (hover: hover) and (pointer: fine){
+  #checkout #applyCoupon:hover{
+    background-color: var(--brown);
+    transform: translateY(-1px);
+  }
+}
+
+/* clique */
+#checkout #applyCoupon:active{
+  background-color: var(--brown);
+  transform: scale(.97);
+}
+
+/* =========================
+   ESTADO "APLICADO" / DISABLED
+========================= */
+
+#checkout #applyCoupon.is-applied{
+  /*background: var(--brown);   /* ✅ mantém marrom após aplicar */
+  opacity: .85;
+  transform: none;
+  cursor: default;
+}
+
+#checkout #applyCoupon:disabled{
+  opacity: .7;
+  cursor: not-allowed;
+}
+
+#checkout #applyCoupon:disabled:hover{
+  background-color: var(--rose);
+  transform: none;
+}
+
+
+/* FIX — largura correta do campo de troco */
+#checkout #changeValue{
+  max-width: 220px !important; /* força sobre o max-width global */
+  width: 100%;
+}
+
+
+
+/* FIX — espaço entre bolinhas e campo de troco */
+#checkout #changeBlock .radio-row{
+  margin-bottom: 1.6rem; /* ajuste fino aqui */
+  
+  
+}
+
+#cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔑 centraliza os itens da lista*/
+  gap: 0.6rem;
+}
+
+#cartList li {
+  width: 100%;
+  max-width: 420px;      /* forma de texto da lista - mesma largura dos inputs */
+  text-align: center;
+  color: var(--brown);
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   LISTA DO CARRINHO — BOTÕES + E -
+========================= */
+
+#cartList .cart-item{
+  width: 100%;
+  max-width: 350px;   /* empurra os botões para dentro */
+}
+
+#cartList .cart-item-row{
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+
+  /*padding: 8px 0;*/
+}
+
+#cartList .cart-item-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#cartList .cart-item-name{
+  color: var(--brown);
+  font-size: 0.9rem;
+}
+
+#cartList .cart-item-meta{
+  color: rgba(102,64,61,.72);
+  font-size: 0.78rem;
+  margin-top: 3px;
+}
+
+
+#cartList .cart-mini-btn{
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--rose);
+  color: #F7EFE6;
+
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 1rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform .12s ease,
+    background-color .2s ease;
+}
+
+/* hover desktop */
+@media (hover: hover) and (pointer: fine){
+  #cartList .cart-mini-btn:hover{
+    background-color: var(--brown);
+    transform: translateY(-1px);
+  }
+}
+
+/* pressão */
+#cartList .cart-mini-btn:active{
+  background-color: var(--brown);
+  transform: scale(.94);
+}
+
+#cartList .cart-mini-btn.is-pressed{
+  background-color: var(--brown);
+  transform: scale(.90);
+}
+
+@media (hover: hover) and (pointer: fine){
+  #cartList .cart-mini-btn:hover,
+  #cartList .cart-mini-btn:hover:active,
+  #cartList .cart-mini-btn.is-pressed:hover{
+    background-color: var(--brown);
+  }
+}
+
+/* =========================
+   MOBILE CHEKOUT — BOTÕES + / -
+   ========================= */
+@media (max-width: 768px){
+
+  #cartList .cart-item-row{
+    gap: 14px; /* espaço maior entre texto e botões */
+  }
+
+  #cartList .cart-mini-btn{
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+}
+
+
+.clear-cart {
+  background: none;
+  border: none;
+
+  margin: 0.6rem auto 1.2rem;
+  display: block;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  color: var(--rose);
+  cursor: pointer;
+
+  opacity: 0.8;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .clear-cart:hover {
+    color: var(--brown);
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}
+
+.clear-cart:active{
+  color: var(--brown);
+  transform: scale(.98);
+  opacity: 1;
+}
+
+/* =========================================================
+   MINI CART — DESKTOP (TIPOGRAFIA ALINHADA AO CHECKOUT)
+   ========================================================= */
+
+.sc-mini-cart{
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  background: #F7EFE6;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  z-index: 999;
+
+  display: none;
+
+  /* 🔹 tipografia base igual ao checkout */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--brown);
+}
+
+/* Título "Resumo" */
+.sc-mini-header{
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+/* Contador de itens */
+.sc-mini-count{
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+/* divisor */
+.sc-mini-divider{
+  height: 1px;
+  background: rgba(102,64,61,.2);
+  margin: 0.4rem 0 0.5rem;
+}
+
+/* Total */
+.sc-mini-total{
+  font-size: 0.95rem;          /* mesma escala do checkout */
+  font-weight: 700;            /* igual ao subtotal */
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+/* Texto "Total:" */
+.sc-mini-total::before{
+  content:"Total: ";
+  font-weight: 600;
+  color: var(--brown);
+}
+
+/* Link "Ver pedido" */
+.sc-mini-link{
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  color: var(--rose);
+  margin-top: 0.25rem;
+
+  cursor: pointer;
+  transition:
+    color .2s ease,
+    transform .2s ease,
+    opacity .2s ease;
+
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (hover: hover) and (pointer: fine){
+  .sc-mini-link:hover{
+    color: var(--brown);
+    transform: translateY(-1px);
+    opacity: .9;
+  }
+}
+
+.sc-mini-link:active{
+  color: var(--brown);
+  transform: scale(.98);
+  opacity: 1;
+}
+
+
+.contact h3 {
+  margin-bottom: 0.4rem;
+}
+
+.contact p {
+  margin-top: 0;
+}
+
+/*---------------Limpar itens invisivel--------------*/
+
+/* esconde por padrão, mas deixa o JS controlar quando tiver itens */
+.clear-cart.is-hidden {
+  display: none;
+}
+
+
+/* ==================================================
+   CHECKOUT — NEGRITO APENAS EM ECONOMIA E TOTAL
+   ================================================== */
+
+/* Total do pedido (já tem classe .total) */
+.sc-line.total > span{
+  font-weight: 700;
+}
+
+/* ==================================================
+   CHECKOUT — AJUSTE ESPAÇO BLOCO LOCAL
+   ================================================== */
+
+#pickupBlock h4{
+  margin-bottom: 1.3rem;   /* antes 1.8rem */
+}
+
+#pickupBlock .sc-pickup{
+  margin-top: 0;          /* remove espaço extra */
+  line-height: 1.5;       /* mantém elegante */
+}
+
+/* ==================================================
+   CHECKOUT — VALORES NORMAIS (SÓ TOTAL EM NEGRITO)
+   ================================================== */
+
+/* Todos os valores das linhas ficam normais */
+.sc-line strong{
+  font-weight: 400;
+}
+
+#subtotal{
+  font-weight: 700 !important;
+}
+
+/* EXCEÇÃO: Total do pedido continua forte */
+.sc-line.total strong{
+  font-weight: 700;
+}
+
+/* ==================================================
+   CHECKOUT — AFASTAR LISTA DO CAMPO ENDEREÇO
+   ================================================== */
+
+#productsLine{
+  margin-top: 1.2rem;
+}
+
+/* ==================================================
+   BOTÃO FINAL — MICRO PULSE QUANDO ATIVO
+   ================================================== */
+
+.sc-final-btn:not(.sc-muted){
+  animation: smoothPulse 1.2s ease;
+}
+
+@keyframes smoothPulse{
+  0%{
+    transform: scale(1);
+  }
+  40%{
+    transform: scale(1.04);
+  }
+  70%{
+    transform: scale(0.98);
+  }
+  100%{
+    transform: scale(1);
+  }
+}

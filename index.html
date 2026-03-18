@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="rose">
+<head>
+
+	
+	<style>
+  /* Splash crítico (evita tela branca antes do CSS carregar) */
+  #splash-screen{
+    position:fixed;
+    inset:0;
+    background:#F7EFE6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999999;
+  }
+  #splash-screen img{
+    max-width:70%;
+  }
+</style>
+
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Smooth — Bakehouse</title>
+
+
+<!-- FAVICON SVG (principal) -->
+<link rel="manifest" href="/manifest.json">
+
+<link rel="icon" type="image/svg+xml" href="/img/icons/favicon-smooth.svg">
+
+<link rel="icon" type="image/png" href="/img/icons/icone-smooth.png">
+
+<link rel="apple-touch-icon" href="/img/icons/icone-smooth.png">
+
+<meta name="theme-color" content="#F7EFE6">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<!---Barra que era preta-->
+
+<meta name="msapplication-navbutton-color" content="#F7EFE6">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+  <!-- CSS -->
+<link rel="stylesheet" href="css/global/reset.css">
+<link rel="stylesheet" href="css/global/base.css">
+<link rel="stylesheet" href="css/theme/theme.css">
+<link rel="stylesheet" href="css/header/header.css">
+<link rel="stylesheet" href="css/header/ticker.css">
+<link rel="stylesheet" href="css/home/home.css">
+<link rel="stylesheet" href="css/cookies/classics/classics.css">
+<link rel="stylesheet" href="css/footer/footer.css">
+<link rel="stylesheet" href="css/checkout/checkout.css">
+<link rel="stylesheet" href="css/about-contact/about-contact.css">
+
+
+<meta name="apple-mobile-web-app-title" content="Smooth">
+	
+</head>
+
+
+<body>  <!-- versão sem padrão elipse -->
+
+
+ <!-- SPLASH PREMIUM -->
+	<div id="splash-screen">
+  <img src="img/logo-off.svg" alt="Smooth">
+</div>
+	
+  <!-- MINI CART DESKTOP (NOVO CHECKOUT) -->
+<div class="sc-mini-cart" id="miniCart">
+  <div class="sc-mini-header">Resumo</div>
+  <div class="sc-mini-count" id="miniCount">0 selecionado(s)</div>
+  <div class="sc-mini-divider"></div>
+  <div class="sc-mini-total" id="miniTotal">R$ 0,00</div>
+  <button class="sc-mini-link" id="miniScroll" type="button">Ver pedido</button>
+
+</div>
+
+<!-- BOTÃO MOBILE (NOVO CHECKOUT) -->
+<button class="sc-mobile-btn" id="mobileBtn" type="button">
+  Ver pedido <strong id="mobileTotal">R$ 0,00</strong>
+</button>
+
+
+<!-- <body class="use-pattern"> --> <!-- versão com padrão elipse -->
+
+  <!-- HEADER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-content">Atendimento: Seg. à Sex. 10:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Sáb. Dom. 16:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Delivery & Retiradas</div>
+    <div class="ticker-content">Atendimento: Seg. à Sex. 10:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Sáb. Dom. 16:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Delivery & Retiradas</div>
+    <div class="ticker-content">Atendimento: Seg. à Sex. 10:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Sáb. Dom. 16:00 às 23:00 hrs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; Delivery & Retiradas</div>
+  </div>
+</div>
+
+
+
+ 
+
+<!-----icones letreiro <img src="img/icons/sacola.svg" class="ticker-icon" alt="">
+  Atendimento: Seg. à Sex. 10:00 às 23:00 hrs
+  &nbsp;•&nbsp;
+  <img src="img/icons/sacola.svg" class="ticker-icon" alt="">
+  Delivery & Retiradas---->
+
+    
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="img/logo.svg" alt="Logo Smooth">
+      </div>
+
+      <div
+      
+      class="nav-actions">
+        <nav>
+ <ul class="nav-list">
+  <li><a href="#home">Home</a></li>
+
+  <!-- ITEM COM SUBMENU -->
+<li class="has-submenu">
+  <a href="#cookies" class="submenu-toggle">
+    Cookies
+    <span class="arrow">▾</span>
+  </a>
+
+  <ul class="submenu">
+  <li>
+    <a href="#classicos" data-ignore-spy>
+      <span class="submenu-text">Clássicos</span>
+    </a>
+  </li>
+  <li>
+ <!-------- <a href="#recheados"> 
+    <span class="submenu-text">Recheados</span>
+  </a>
+</li>
+
+<li>
+  <a href="#gourmet">
+    <span class="submenu-text">Gourmet</span> --->
+  </a>
+</li>
+
+</ul>
+
+</li>
+
+  <li><a href="#checkout">Seu pedido</a></li>
+
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#contato">Contato</a></li>
+</ul>
+
+
+
+        </nav>
+
+       <button class="hamburger" id="hamburgerBtn" type="button">
+       <span></span>
+       <span></span>
+       <span></span>
+       </button>
+
+        <button id="themeToggle" class="theme-toggle" type="button">Tema</button>
+      </div>
+    </div>
+   </header>
+
+  <!-- HOME -->
+  <section id="home" class="section home">
+    <div class="container home-grid">
+      <div>
+        <div class="hero-title">
+          <span class="big">Pronto</span>
+            <span class="mid">para</span>
+
+  <div class="script-wrap">
+  <span class="script">saborear</span>
+  <span class="interrogacao">?</span>
+</div>
+
+        </div>
+
+
+  <div class="home-extra">
+  <span class="mid">Cookies artesanais feitos com ingredientes selecionados.</span>
+  <span class="mid">Escolha seus favoritos e faça seu pedido.</span>
+</div>
+
+        <a href="#cookies-cta" class="cta-button">Cardápio digital</a>
+
+      </div>
+
+      <img src="img/profile.png"
+     alt="Foto de perfil"
+     class="profile-img"
+     loading="eager"
+     decoding="sync">
+    </div>
+  </section>
+
+  <!-- ÂNCORA EXCLUSIVA DO CTA (Cardápio digital) -->
+<div id="cookies-cta" class="anchor-cta"></div>
+
+
+<!-- COOKIES -->
+<!-- COOKIES -->
+<section id="cookies" class="section cookies">
+
+  <div class="container">
+
+    <h2 class="section-title underline-anim">Cookies</h2>
+
+<!-- ==================================================
+     TABS DO CARDÁPIO (DESATIVADO TEMPORARIAMENTE)
+     --------------------------------------------------
+     Este bloco cria as abas para filtrar categorias
+     de cookies (Clássicos, Recheados, Gourmet).
+
+     Está comentado porque a navegação por tabs
+     ainda não está sendo usada no layout atual.
+     ================================================== -->
+
+<!--
+<div class="cookie-tabs">
+  <button class="tab-btn active" data-tab="classicos">Clássicos</button>
+  <button class="tab-btn" data-tab="recheados">Recheados</button>
+  <button class="tab-btn" data-tab="gourmet">Gourmet</button>
+</div>
+-->
+
+    <!-- CATEGORIA: CLÁSSICOS -->
+    <div class="cookie-category" id="classicos">
+     <h3 class="category-title">Clássicos</h3>
+
+
+      <div class="cookie-grid">
+
+      
+
+
+<!----------TESTE CARD-->
+<!-- Cookie 01-->
+<div class="cookie-card" data-base-name="New York">
+
+
+
+  <!-- CARROSSEL -->
+<div class="card-media" data-carousel>
+
+  <div class="carousel-track">
+    <img src="img/cookies/New-York/01.png"
+         alt="Cookie Double Chocolate"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+    <img src="img/cookies/New-York/02.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+    <img src="img/cookies/New-York/03.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+          <img src="img/cookies/New-York/04.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+          <img src="img/cookies/New-York/05.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+         <img src="img/cookies/New-York/06.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+  </div>
+
+  <!-- setas -->
+  <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+  <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+  <!-- dots -->
+  <div class="carousel-dots" aria-hidden="true"></div>
+
+</div>
+
+
+
+  <!-- INFO -->
+  <div class="cookie-info">
+    <h4>NEW YORK</h4>
+
+    <p class="subinfo">
+  Simples • Cheio de chocolate • Irresistível
+</p>
+
+    <p>
+      Massa tradicional de baunilha, com pedaços de chocolate ao leite e meio amargo.
+    </p>
+
+    <!-- SELETOR DE PESO (OPCIONAL) -->
+    <div class="radio-row weight-row">
+
+ <label>
+    120g
+    <input type="radio" name="weight-newyork"
+           value="120" data-price="18.99" checked>
+  </label>
+
+
+  <label>
+    60g
+    <input type="radio" name="weight-newyork"
+           value="60" data-price="9.99">
+  </label>
+
+ 
+</div>
+
+    <div class="cookie-footer">
+
+      <!-- BLOCO PREÇO (MESMO DO ORIGINAL) -->
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">18,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <!-- CONTROLES (SEM ALTERAÇÃO) -->
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Cookie 02-->
+<div class="cookie-card" data-base-name="Triplochoco">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ✅ mesmas imagens do Cookie 01, ORDEM ALTERADA -->
+      <img src="img/cookies/Triplochoco/01.jpg"
+           alt="Cookie Triplochoco"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Triplochoco"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/double-chocolate.png"
+           alt="Cookie Triplochoco"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Triplochoco"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Triplochoco"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <!-- INFO -->
+  <div class="cookie-info">
+    <h4>TRIPLOCHOCO</h4>
+
+    <p class="subinfo">
+      Intenso • Cremoso • Sem exageros
+    </p>
+
+    <p>
+      Massa de cacau com pedaços de chocolate ao leite, meio amargo e branco.
+    </p>
+
+    <!-- SELETOR DE PESO (OPCIONAL) -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-triplochoco"
+               value="120" data-price="18.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-triplochoco"
+               value="60" data-price="9.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <!-- BLOCO PREÇO (MESMO DO ORIGINAL) -->
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">18,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <!-- CONTROLES (SEM ALTERAÇÃO) -->
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Cookie 03-->
+<div class="cookie-card" data-base-name="Brigadeiro Intenso">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ⭐ mesmas imagens / nova ordem -->
+      
+
+      <img src="img/cookies/Brigadeiro-Intenso/02.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+    <img src="img/cookies/Brigadeiro-Intenso/03.png"
+         alt="Cookie New York"
+         class="carousel-img"
+         loading="lazy"
+         decoding="async"
+         draggable="false">
+
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Brigadeiro Intenso"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Brigadeiro Intenso"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+           <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Brigadeiro Intenso"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <!-- INFO -->
+  <div class="cookie-info">
+    <h4>BRIGADEIRO INTENSO</h4>
+
+    <p class="subinfo">
+      Forte • Cremoso por dentro • Equilibrado
+    </p>
+
+    <p>
+      Massa de cacau com recheio de brigadeiro meio amargo.
+    </p>
+
+    <!-- SELETOR DE PESO -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-brigadeiro-intenso"
+               value="120" data-price="16.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-brigadeiro-intenso"
+               value="60" data-price="7.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">16,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<!-- Cookie 04-->
+<div class="cookie-card" data-base-name="Chocoblend">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ⭐ mesmas imagens / ordem diferente -->
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Chocoblend"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York5.jpg"
+           alt="Cookie Chocoblend"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Chocoblend"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/double-chocolate.png"
+           alt="Cookie Chocoblend"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Chocoblend"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <div class="cookie-info">
+    <h4>CHOCOBLEND</h4>
+
+    <p class="subinfo">
+      Dois sabores • Suave • Equilibrado
+    </p>
+
+    <p>
+      Combinação de massas de cacau e baunilha, com recheio de brigadeiro de chocolate meio amargo e branco.
+    </p>
+
+    <!-- SELETOR DE PESO (OPCIONAL) -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-chocoblend"
+               value="120" data-price="16.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-chocoblend"
+               value="60" data-price="7.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <!-- BLOCO PREÇO (MESMO DO ORIGINAL) -->
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">16,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <!-- CONTROLES (SEM ALTERAÇÃO) -->
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- Cookie 05-->
+<div class="cookie-card" data-base-name="Dark Nutella">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ⭐ mesmas imagens / nova ordem -->
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Dark Nutella"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Dark Nutella"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/double-chocolate.png"
+           alt="Cookie Dark Nutella"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Dark Nutella"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York5.jpg"
+           alt="Cookie Dark Nutella"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <div class="cookie-info">
+    <h4>DARK NUTELLA</h4>
+
+    <p class="subinfo">
+      Sofisticado • Marcante • Contraste perfeito
+    </p>
+
+    <p>
+      Massa tradicional de baunilha com recheio de Nutella e pedaços de chocolate meio amargo.
+    </p>
+
+    <!-- SELETOR DE PESO -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-dark-nutella"
+               value="120" data-price="17.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-dark-nutella"
+               value="60" data-price="8.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">17,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Cookie 06-->
+<div class="cookie-card" data-base-name="Milk & Nuts">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ⭐ mesmas imagens / nova ordem -->
+      <img src="img/cookies/New-York5.jpg"
+           alt="Cookie Milk & Nuts"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Milk & Nuts"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Milk & Nuts"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Milk & Nuts"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/double-chocolate.png"
+           alt="Cookie Milk & Nuts"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <div class="cookie-info">
+    <h4>MILK & NUTS</h4>
+
+    <p class="subinfo">
+      Amendoim • Crocante • Nostálgico
+    </p>
+
+    <p>
+      Massa tradicional de baunilha com recheio de brigadeiro de paçoca e chocolate ao leite.
+    </p>
+
+    <!-- SELETOR DE PESO -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-milk-nuts"
+               value="120" data-price="17.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-milk-nuts"
+               value="60" data-price="8.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">17,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<!-- Cookie VARIAÇÃO 07 -->
+<div class="cookie-card" data-base-name="Loveberry">
+
+  <!-- CARROSSEL -->
+  <div class="card-media" data-carousel>
+
+    <div class="carousel-track">
+
+      <!-- ⭐ mesmas imagens / nova ordem -->
+      <img src="img/cookies/New-York4.jpg"
+           alt="Cookie Loveberry"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York2.jpg"
+           alt="Cookie Loveberry"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York5.jpg"
+           alt="Cookie Loveberry"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/double-chocolate.png"
+           alt="Cookie Loveberry"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+      <img src="img/cookies/New-York3.jpg"
+           alt="Cookie Loveberry"
+           class="carousel-img"
+           loading="lazy"
+           decoding="async"
+           draggable="false">
+
+    </div>
+
+    <!-- setas -->
+    <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+    <!-- dots -->
+    <div class="carousel-dots" aria-hidden="true"></div>
+
+  </div>
+
+  <div class="cookie-info">
+    <h4>LOVEBERRY</h4>
+
+    <p class="subinfo">
+      Levemente ácido • Sem exageros • Cheio de sabor
+    </p>
+
+    <p>
+      Massa red velvet com recheio de brigadeiro de chocolate branco e geleia de morango.
+    </p>
+
+    <!-- SELETOR DE PESO -->
+    <div class="radio-row weight-row">
+
+      <label>
+        120g
+        <input type="radio" name="weight-loveberry"
+               value="120" data-price="22.99" checked>
+      </label>
+
+      <label>
+        60g
+        <input type="radio" name="weight-loveberry"
+               value="60" data-price="12.99">
+      </label>
+
+    </div>
+
+    <div class="cookie-footer">
+
+      <div class="price-block">
+        <div class="cookie-price-pill">
+          <div class="price-line">
+            <span class="currency">R$</span>
+            <span class="value">22,<span class="cents">99</span></span>
+          </div>
+        </div>
+
+        <small class="info-produto">
+          unidade • 120g
+        </small>
+      </div>
+
+      <div class="qty-control">
+
+        <div class="qty-col">
+          <button class="qty-btn minus" type="button">−</button>
+          <small class="info-produto">remover</small>
+        </div>
+
+        <span class="qty">0</span>
+
+        <div class="qty-col">
+          <button class="qty-btn plus" type="button">+</button>
+          <small class="info-produto">adicionar</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<!-- ==================================================
+     COOKIE BASE — VERSÃO PADRÃO (SEM CARROSSEL)
+     DESATIVADO (guardado em <template>, não aparece)
+     ================================================== -->
+
+<template id="cookie07-padrao-sem-carrossel">
+  <div class="cookie-card" data-base-name="Loveberry">
+
+    <img src="img/cookies/double-chocolate.png" alt="Loveberry">
+
+    <div class="cookie-info">
+      <h4>LOVEBERRY</h4>
+
+      <p class="subinfo">
+        Levemente ácido • Sem exageros • Cheio de sabor
+      </p>
+
+      <p>
+        Massa red velvet com recheio de brigadeiro de chocolate branco e geleia de morango.
+      </p>
+
+      <!-- SELETOR DE PESO (OPCIONAL) -->
+      <div class="radio-row weight-row">
+
+        <label>
+          120g
+          <input type="radio" name="weight-loveberry"
+                 value="120" data-price="22.99" checked>
+        </label>
+
+        <label>
+          60g
+          <input type="radio" name="weight-loveberry"
+                 value="60" data-price="12.99">
+        </label>
+
+      </div>
+
+      <div class="cookie-footer">
+
+        <!-- BLOCO PREÇO (MESMO DO ORIGINAL) -->
+        <div class="price-block">
+          <div class="cookie-price-pill">
+            <div class="price-line">
+              <span class="currency">R$</span>
+              <span class="value">22,<span class="cents">99</span></span>
+            </div>
+          </div>
+
+          <small class="info-produto">
+            unidade • 120g
+          </small>
+        </div>
+
+        <!-- CONTROLES (SEM ALTERAÇÃO) -->
+        <div class="qty-control">
+
+          <div class="qty-col">
+            <button class="qty-btn minus" type="button">−</button>
+            <small class="info-produto">remover</small>
+          </div>
+
+          <span class="qty">0</span>
+
+          <div class="qty-col">
+            <button class="qty-btn plus" type="button">+</button>
+            <small class="info-produto">adicionar</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</template>
+
+
+
+
+
+</div> <!-- /.cookie-grid -->
+
+</div> <!-- /.cookie-category -->
+
+  </div> <!-- /.container -->
+
+</section> <!-- /#cookies -->
+
+
+
+
+
+
+
+    
+
+  
+<!-- CHECKOUT — NOVO / RESUMO (IRMÃO DO GRID, NÃO FILHO) -->
+<section class="sc-checkout" id="checkout">
+  <div class="container">
+    <div class="checkout-card">
+  <div class="checkout-content">
+
+
+<h3 class="section-title">Seu pedido</h3>
+
+
+  <ul id="cartList"></ul>
+
+<button id="clearCart" class="clear-cart is-hidden" type="button">
+  Limpar itens
+</button>
+
+
+  <div class="sc-line">
+    <span>Subtotal</span>
+    <strong id="subtotal">R$ 0,00</strong>
+  </div>
+
+  <!-- DADOS DO CLIENTE -->
+  <div class="sc-block">
+    <h4>Seus dados</h4>
+    <input type="text" id="clientName" placeholder="Nome" />
+    <input type="tel" id="clientPhone" placeholder="WhatsApp" />
+  </div>
+
+  <!-- OBSERVAÇÕES -->
+  <div class="sc-block">
+    <textarea id="notes" placeholder="Observações (opcional)"></textarea>
+  </div>
+
+
+  <!-- RECEBIMENTO -->
+ <div class="sc-block">
+  <h4>Como você quer receber?</h4>
+
+  <div class="radio-row">
+    <label>
+      Retirada
+      <input type="radio" name="receive" value="retirada">
+    </label>
+
+    <label>
+      Entrega (R$ 9,99)
+      <input type="radio" name="receive" value="entrega">
+    </label>
+  </div>
+</div>
+
+
+  <!-- LOCAL RETIRADA -->
+  <div class="sc-block sc-hidden" id="pickupBlock">
+    <h4 class="sc-pickup-title">Local</h4>
+    <p class="sc-pickup">
+      Rua Emidio Alves Feitosa, nº 1680<br>
+      Bairro Agenor de Carvalho.
+    </p>
+  </div>
+
+
+<!-- CHECKOUT — SENTINEL (controle de visibilidade do mini-cart) -->
+<div id="checkout-sentinel"></div>
+
+  <!-- ENDEREÇO ENTREGA -->
+  <div class="sc-block sc-hidden" id="addressBlock">
+    <textarea id="address" placeholder="Endereço para entrega"></textarea>
+  </div>
+
+  <!-- CUPOM FRETE (OCULTO) -->
+  <div class="sc-block sc-hidden" id="couponBlock">
+    <input type="text" id="coupon" placeholder="Cupom de entrega" />
+    <button id="applyCoupon" type="button">Aplicar</button>
+  </div>
+
+
+<!-- ======================
+     PRODUTOS (RESUMO FINAL)
+     ====================== -->
+<div class="sc-line sc-hidden" id="productsLine">
+  <span>Produtos</span>
+  <strong id="productsValue">R$ 0,00</strong>
+</div>
+
+
+  <div class="sc-line sc-hidden" id="deliveryLine">
+    <span>Taxa de entrega</span>
+    <strong id="delivery">R$ 0,00</strong>
+  </div>
+
+
+  <!-- ======================
+       DESCONTOS (SÓ COM CUPOM)
+       ====================== -->
+  <div class="sc-line sc-hidden" id="shippingDiscountLine">
+    <span>Desconto na entrega</span>
+    <strong id="shippingDiscount">-R$ 0,00</strong>
+  </div>
+
+       
+  <div class="sc-line sc-hidden" id="productsDiscountLine">
+    <span>Desconto nos produtos</span>
+    <strong id="productsDiscount">-R$ 0,00</strong>
+  </div>
+
+  
+
+  <div class="sc-line total-savings sc-hidden" id="totalSavingsLine">
+  <span>Economia total</span>
+  <strong id="totalSavings">R$ 0,00</strong>
+</div>
+
+
+  <div class="sc-line total">
+    <span>Total do pedido</span>
+    <strong id="total">R$ 0,00</strong>
+  </div>
+
+  <!-- PAGAMENTO -->
+  <div class="sc-block">
+  <h4>Forma de pagamento</h4>
+
+  <div class="radio-row">
+    <label>
+      Pix
+      <input type="radio" name="payment" value="Pix">
+    </label>
+
+    <label>
+      Cartão
+      <input type="radio" name="payment" value="Cartão">
+    </label>
+
+    <label>
+      Dinheiro
+      <input type="radio" name="payment" value="Dinheiro">
+    </label>
+  </div>
+</div>
+
+
+  <!-- TROCO -->
+  <div class="sc-block sc-hidden" id="changeBlock">
+  <h4>Precisa de troco?</h4>
+
+  <div class="radio-row">
+    <label>
+      Não
+      <input type="radio" name="change" value="nao">
+    </label>
+
+    <label>
+      Sim
+      <input type="radio" name="change" value="sim">
+    </label>
+  </div>
+
+  <input
+  type="text"
+  id="changeValue"
+  class="sc-hidden"
+  placeholder="Troco para quanto?"
+  />
+</div>
+
+
+
+<!-- <p class="checkout-final-note">Falta só um passo para saborear.</p> -->
+
+
+
+  <button class="sc-final-btn sc-muted" id="finishBtn" type="button">
+    Finalizar pedido no whatsapp
+  </button>
+
+      </div><!-- /.checkout-content -->
+
+    </div><!-- /.checkout-card -->
+  </div><!-- /.container -->
+</section>
+
+
+
+
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <h2 class="section-title">Sobre</h2>
+      <p>A Smooth nasce da ideia de suavidade.
+</p>
+
+<p>
+  Com produtos criados de forma artesanal, a partir de processos cuidadosos,
+  ingredientes selecionados e atenção real a cada detalhe do resultado final.
+  Mais do que oferecer produtos, a Smooth busca criar momentos aconchegantes.
+  Tudo é feito com calma, respeitando o tempo, o processo e o prazer de saborear 
+  algo preparado com carinho.
+  Texturas equilibradas e sabores marcantes fazem parte do nosso cuidado diário.
+  Aqui, cada criação é pensada como uma experiência — do primeiro contato 
+  à última mordida. Um convite para desacelerar, sentir e aproveitar.
+
+  Suave, simples, Smooth.
+</p>
+
+      </p>
+    </div>
+  </section>
+
+   <!-- CONTATO -->
+  <section id="contato" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <p>Email: smoothbakehouse@gmail.com</p>
+    </div>
+  </section>
+
+
+  <!-- Mini-Cart -->
+
+
+
+
+<!-- BOTÃO MOBILE — VER PEDIDO -->
+
+
+<footer class="footer">
+  <!-- LOGO -->
+  <img
+    src="img/logo.svg"
+    alt="Smooth Bakehouse"
+    class="footer-logo"
+  />
+
+    <!-- REDES SOCIAIS -->
+  <div class="footer-social">
+
+  <a href="https://www.instagram.com/smoothbakehouse" target="_blank" aria-label="Instagram">
+    <img src="img/icons/instagram.svg" alt="Instagram" />
+  </a>
+
+  <a href="https://linktr.ee/smoothbakehouse" target="_blank" aria-label="Linktree">
+    <img src="img/icons/linktree.svg" alt="Linktree" />
+  </a>
+
+  <a href="https://wa.me/556932156921" target="_blank" aria-label="WhatsApp">
+    <img src="img/icons/whatsapp.svg" alt="WhatsApp" />
+  </a>
+
+</div>
+
+
+  <!-- TEXTO PRINCIPAL -->
+  <p class="footer-brand">© 2026 — Smooth Bakehouse  —</p>
+
+  <!-- CRÉDITO DISCRETO -->
+  <p class="footer-credit">
+    Criado e desenvolvido por Inove Tecnologias.
+  </p>
+</footer>
+
+
+
+
+<!-- ======================
+     ALERTA SMOOTH
+====================== -->
+<div id="smooth-alert" class="smooth-alert">
+  <div class="smooth-alert-box">
+
+    <strong>Smooth diz:</strong>
+
+    <p id="smooth-alert-text"></p>
+
+    <button id="smooth-alert-ok" class="smooth-alert-btn" type="button">
+  OK
+</button>
+
+  </div>
+</div>
+
+
+<!-- ==================================================
+     LIGHTBOX (ZOOM) — REUSA O CARROSSEL (MESMO ESTILO)
+     ================================================== -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Zoom da galeria">
+    <div class="card-media lb-media" data-lb-carousel>
+      <button class="lightbox-close" type="button" aria-label="Fechar zoom">×</button>
+
+      <div class="carousel-track" id="lbCarouselTrack"></div>
+
+      <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+      <button class="carousel-btn next" type="button" aria-label="Próxima imagem">›</button>
+
+      <div class="carousel-dots" id="lbDots"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- =========================
+     BANNER: NOVA VERSÃO (PWA)
+========================= -->
+<div class="update-banner" id="updateBanner" hidden>
+  <div class="update-box" role="dialog" aria-modal="true" aria-label="Atualização disponível">
+    <button class="update-close" id="updateClose" type="button" aria-label="Fechar aviso">×</button>
+
+    <div class="update-body">
+      <span class="update-text">Atualizamos o cardápio. Deseja carregar a versão nova?</span>
+
+      <div class="update-actions">
+        <button class="update-btn" id="updateBtn" type="button">Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- SCRIPTS FINAIS -->
+  <script>
+    /* ========================= TROCA DE TEMA ========================= */
+    /*const themes = ["rose", "light", "dark"];
+    let currentTheme = 0;
+    const html = document.documentElement;
+    const button = document.getElementById("themeToggle");
+
+    button.addEventListener("click", () => {
+      currentTheme = (currentTheme + 1) % themes.length;
+      html.setAttribute("data-theme", themes[currentTheme]);
+    });*/
+</script>
+
+
+<script src="js/mapa-nav.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/checkout.js" defer></script>
+<script src="js/lightbox.js" defer></script>
+<script src="js/ticker.js"></script>
+
+
+<script>
+/* =========================
+   PWA: SERVICE WORKER + AVISO DE ATUALIZAÇÃO (PROFISSIONAL)
+   - Não roda no Live Server (DEV)
+   - Auto-update se não houver pedido em andamento
+   - Banner com X se houver carrinho/dados preenchidos
+   - Mensagem: “Atualizamos o cardápio…”
+========================= */
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+
+    const banner   = document.getElementById("updateBanner");
+    const btn      = document.getElementById("updateBtn");
+    const closeBtn = document.getElementById("updateClose");
+
+    const DISMISS_KEY = "smooth_update_dismissed_session";
+
+    /* =========================
+       NÃO RODAR EM DEV (Live Server)
+    ========================= */
+    const IS_DEV =
+      location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1";
+
+    if (IS_DEV) return;
+
+    function hasUserProgress(){
+      const hasCart = (() => {
+        try {
+          const raw = localStorage.getItem("smooth_cart_v1");
+          if(!raw) return false;
+          const obj = JSON.parse(raw);
+          if(!obj || typeof obj !== "object") return false;
+          return Object.values(obj).some(i => i && Number(i.qty) > 0);
+        } catch(e){
+          return false;
+        }
+      })();
+
+      const hasDraft = (() => {
+        try{
+          const raw = localStorage.getItem("smooth_draft_v1");
+          if(!raw) return false;
+          const d = JSON.parse(raw);
+          if(!d || typeof d !== "object") return false;
+
+          return !!(
+            String(d.name||"").trim() ||
+            String(d.phone||"").trim() ||
+            String(d.address||"").trim() ||
+            String(d.notes||"").trim() ||
+            String(d.changeValue||"").trim()
+          );
+        }catch(e){
+          return false;
+        }
+      })();
+
+      return hasCart || hasDraft;
+    }
+
+    function setBannerText(){
+      if(!banner) return;
+
+      const textEl =
+        banner.querySelector(".update-text") ||
+        banner.querySelector('[data-update-text]') ||
+        banner.querySelector("span") ||
+        null;
+
+      if(textEl){
+        textEl.textContent = "Atualizamos o cardápio. Quer carregar a versão nova?";
+      }
+    }
+
+    function showOrAutoUpdate(worker){
+      if (!banner || !btn) return;
+
+      // ✅ sem progresso → atualiza sozinho
+      if (!hasUserProgress()) {
+        if (worker) worker.postMessage({ type: "SKIP_WAITING" });
+        window.location.reload();
+        return;
+      }
+
+      // ✅ se já dispensou nesta sessão → não mostra de novo
+      if (sessionStorage.getItem(DISMISS_KEY) === "1") return;
+
+      // ✅ mostra banner
+      setBannerText();
+      banner.hidden = false;
+
+      // X (fechar)
+      if (closeBtn) {
+        closeBtn.onclick = () => {
+          banner.hidden = true;
+          sessionStorage.setItem(DISMISS_KEY, "1");
+        };
+      }
+
+      // Atualizar
+      btn.onclick = () => {
+        if (worker) worker.postMessage({ type: "SKIP_WAITING" });
+        try { localStorage.setItem("smooth_force_reload", String(Date.now())); } catch(e){}
+        window.location.reload();
+      };
+    }
+
+    try {
+      const reg = await navigator.serviceWorker.register("/sw.js");
+      console.log("Service Worker registrado");
+
+      // ✅ força checagem de update (Cloudflare/CDN pode demorar)
+      try { await reg.update(); } catch(e){}
+
+      // ✅ quando volta pra aba, checa update de novo
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          try { reg.update(); } catch(e){}
+        }
+      });
+
+      // ✅ checagem leve a cada 30 min
+      setInterval(() => {
+        try { reg.update(); } catch(e){}
+      }, 30 * 60 * 1000);
+
+      // se já existe update esperando
+      if (reg.waiting) {
+        showOrAutoUpdate(reg.waiting);
+      }
+
+      // quando encontrar um novo SW
+      reg.addEventListener("updatefound", () => {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+
+        newWorker.addEventListener("statechange", () => {
+          if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+            showOrAutoUpdate(newWorker);
+          }
+        });
+      });
+
+    } catch (err) {
+      console.log("Erro no SW:", err);
+    }
+
+  });
+}
+</script>
+      
+
+
+<!------------Splash intro app-->
+<script>
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash-screen");
+
+  splash.classList.add("show");
+
+  setTimeout(() => {
+
+    // ⭐ libera a página antes do fade
+    document.body.classList.add("app-ready");
+
+    splash.classList.add("splash-hide");
+
+    setTimeout(() => {
+      splash.remove();
+    }, 700);
+
+  }, 1200);
+});
+</script>
+
+
+
+</body>
+</html>

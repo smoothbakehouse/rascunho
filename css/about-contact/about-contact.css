@@ -1,0 +1,60 @@
+/* =========================================================
+   SOBRE — CONTROLE REAL
+   ========================================================= */
+#sobre .section-title {
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brown);
+  margin-bottom: 1.2rem;
+}
+
+
+#sobre p {
+  font-family: "Nexa Heavy", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--rose);
+  max-width: 700px;
+  margin: 0 auto;
+  white-space: pre-line;
+}
+
+/* =========================================================
+   CONTATO — CONTROLE REAL
+   ========================================================= */
+
+#contato .section-title {
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brown);
+  margin-bottom: 1.2rem;
+}
+
+#contato p {
+  font-family: 'Nexa Heavy', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--rose);
+}
+
+
+/* =========================================================
+   SOBRE — TEXTO CENTRALIZADO
+   ========================================================= */
+
+#sobre p {
+  text-align: center;      /* 🔑 isso é o que faltava */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   CONTATO — TEXTO CENTRALIZADO
+   ========================================================= */
+
+#contato p {
+  text-align: center;      /* 🔑 */
+}

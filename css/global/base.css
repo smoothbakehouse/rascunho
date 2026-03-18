@@ -1,0 +1,715 @@
+/* ========================= GLOBAL BASE ========================= */
+/* Este arquivo define padrões universais usados pelo site todo. */
+/* Nada aqui deve ser específico de header, home, cookies, etc.  */
+
+
+/*html {
+  background-color: #F7EFE6 !important;
+}*/
+
+html{
+  background: var(--background);
+}
+
+
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
+
+/* ------------------------- TIPOGRAFIA ------------------------- */
+html, body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+  overflow-x: hidden; /* evita scroll lateral */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* antes era menor */
+  margin-inline: auto;
+  padding-inline: clamp(12px, 3vw, 24px);
+}
+
+
+/* ------------------------- LINKS ------------------------- */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+/* ------------------------- BOTÕES GERAIS ------------------------- */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: 0.25s ease;
+}
+
+/* ------------------------- TÍTULOS ------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nexa Heavy", sans-serif; /* ATIVA Bingo nos títulos */
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+/* ------------------------- gambi ------------------------- */
+/*.text-thin {
+  font-family: "Nexa Heavy", sans-serif;
+  font-weight: 400;        /* mantém o peso original */
+ /* opacity: 0.85;           /* deixa visualmente mais leve */
+ /* -webkit-text-stroke: 0.2px transparent; /* suaviza as bordas */
+/*}*/
+
+/* ------------------------- TEXTO ------------------------- */
+p, span, li {
+  color: var(--brown);
+  word-break: break-word;
+}
+
+/* ------------------------- SEÇÕES----SOBRE + CONTATO---------------------- */
+.section {
+  padding: 4rem 0;
+  background: #F7EFE6;
+}
+
+.section-title {
+  font-family: "Nexa Heavy", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.6rem;
+  padding-bottom: 6px;
+
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--brown);
+  margin-bottom: 2rem;
+}
+
+/* ------------------------- UTILITÁRIOS ------------------------- */
+
+/* Flex helpers */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Espaçamentos */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+
+/*---------------- ===== Underline Animado Universal Enche igual home===== ---------------------------*/
+.underline-animado {
+  position: relative;
+  display: inline-block; /* permite animar sublinhado sem quebrar layout */
+  padding-bottom: 3px;
+}
+
+.underline-animado::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+ /* background: red; /* cor do sublinhado */
+  transition: width 0.35s ease;
+}
+
+.underline-animado:hover::after {
+  width: 100%;
+}
+
+/* ------------------------- SOMBRAS UNIVERSAIS ------------------------- */
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+/* ------------------------- RESPONSIVIDADE BÁSICA ------------------------- */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+
+/* =========================================
+   SECTION TITLES — UNDERLINE ANIMADO
+   ========================================= */
+
+/* underline escondido */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--rose);
+
+
+  transition:
+    width 0.35s ease 0.25s; /* 👈 delay de 0.25s */
+}
+
+
+/* ativado por scroll */
+.section-title.is-active::after {
+  width: 100%;
+}
+
+/* =========================================
+   CENTRALIZAR TÍTULOS DAS SEÇÕES
+   ========================================= */
+
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  background: #F7EFE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity .6s ease;
+}
+
+#splash-screen img {
+  width: clamp(200px, 40vw, 290px);
+  max-width: 70%;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+#splash-screen.show img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.splash-hide {
+  opacity: 0;
+}
+
+/*-------fade home----------*/
+
+
+
+/* =========================================================
+   OFFSET DE SCROLL — AJUSTE FINO
+   ========================================================= */
+
+/* HOME */
+#home{
+  scroll-margin-top: 100px; /* ajuste fino desktop */
+}
+
+
+/* Cookies (título da seção) */
+#cookies {
+  scroll-margin-top: 45px;
+}
+
+/* Categoria Clássicos */
+#classicos {
+  scroll-margin-top: 97px;
+}
+
+/* Sobre */
+#sobre {
+  scroll-margin-top: 30px;
+}
+
+/* CHECKOUT — especial (porque usa scrollIntoView) */
+  #checkout {
+  scroll-margin-top: 60px;
+}
+
+
+/* =========================================================
+   OFFSET EXCLUSIVO — CTA "Cardápio digital"
+   ========================================================= */
+
+#cookies-cta{
+  scroll-margin-top: 45px; /* ajuste fino DESKTOP do CTA */
+}
+
+@media (max-width:768px){
+  #cookies-cta{
+    scroll-margin-top: 35px; /* ajuste fino MOBILE do CTA */
+  }
+}
+
+/* âncora não ocupa espaço visível */
+.anchor-cta{
+  height: 0;
+}
+
+/* =========================
+   OFFSET SCROLL — MOBILE
+========================= */
+@media (max-width:768px){
+
+
+/*#home{
+  /*scroll-margin-top: 120px; /* ajuste fino mobile
+}*/
+
+  #cookies{
+    scroll-margin-top: 90px;
+  }
+
+  #classicos{
+    scroll-margin-top: 92px;
+  }
+
+  #checkout{
+    scroll-margin-top: 45px;
+  }
+
+  #sobre{
+    scroll-margin-top: 35px;
+  }
+
+  #contato{
+    scroll-margin-top: 90px;
+  }
+
+}
+
+/* =========================================================
+   BODY — BLOCO REMOVIDO (duplicado e conflitante)
+   =========================================================
+
+body {
+  font-family: "Nexa Heavy", sans-serif;
+  line-height: 1.6;
+  background: var(--background);
+  color: var(--text);
+}
+
+*/
+
+
+
+@font-face {
+  font-family: 'Nexa Heavy';
+  src: url('../../fonts/Nexa-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('../../fonts/Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MentholSignature';
+  src: url('../../fonts/Menthol Signature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  
+}
+
+@font-face {
+  font-family: 'Bingo';
+  src: url('../../fonts/Bingo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  }
+
+@font-face {
+  font-family: 'Agency';
+  src: url('../../fonts/agency.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+ }
+
+       @font-face {
+  font-family: 'Roboto';
+  src: url('../../fonts/RobotoBold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+ }
+
+
+/*-------Remove azul do botão--------------------------------*/
+* { -webkit-tap-highlight-color: transparent; }
+
+/*
+button:active {
+  transform: scale(.97);
+}
+*/
+
+/*-----bug home app----*/
+/* ===== ISOLAMENTO DO RENDER DO APP ===== */
+
+body {
+  visibility: hidden;
+}
+
+#splash-screen {
+  visibility: visible !important;
+}
+
+body.app-ready {
+  visibility: visible;
+}
+
+
+
+
+
+/* ======================
+   ALERTA SMOOTH
+====================== */
+
+.smooth-alert{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:999999;
+}
+
+.smooth-alert.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.smooth-alert-box{
+  background:#fff;
+  padding:18px 18px;
+  border-radius:18px;
+  text-align:center;
+
+  width:min(340px, calc(100vw - 36px));
+  max-width:340px;
+
+  min-height:190px;          /* tamanho padrão */
+  display:flex;
+  flex-direction:column;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.smooth-alert-box strong{
+  display:block;
+  margin-bottom:8px;
+  color:#4A2E2A;
+}
+
+#smooth-alert-text{
+  margin: 10px 0 0;
+  color:#4A2E2A;
+  font-size: 0.92rem;
+  line-height: 1.35;
+
+  flex: 1;                   /* ocupa o meio da caixa */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform: translateY(-7px);
+
+  max-height: 90px;          /* não cresce infinito */
+  overflow:auto;             /* se passar, rola */
+  padding: 0 6px;
+}
+
+/* BOTÃO ALERTA */
+
+.smooth-alert-btn{
+  margin-top: 12px;
+  padding: 8px 16px;
+  border:none;
+  border-radius:10px;
+  background-color: var(--rose, #EF9C9F);
+  color:#F7EFE6;
+
+  font-weight:700;
+  font-size: 0.85rem;
+  min-width: 96px;
+  align-self: center;
+
+  cursor:pointer;
+  transition: background-color .2s ease, transform .15s ease, opacity .15s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .smooth-alert-btn:hover{
+    background-color: var(--brown);
+    transform: translateY(-1px);
+    opacity: .95;
+  }
+}
+
+.smooth-alert-btn:active{
+  background-color: var(--brown);
+  transform: scale(.97);
+  opacity: 1;
+}
+
+/* ==================================================
+   FIX OVERLAY — EVITA BLOQUEIO INVISÍVEL NO MOBILE
+   ================================================== */
+
+/* Splash: se por algum motivo não removeu ainda, não pode bloquear toque */
+#splash-screen{
+  pointer-events: none;
+}
+
+/* Lightbox: quando NÃO está ativo, não pode capturar clique */
+.lightbox{
+  pointer-events: none;
+}
+.lightbox.active{
+  pointer-events: auto;
+}
+
+/* Alert: quando NÃO está visível, não pode capturar clique */
+.smooth-alert{
+  pointer-events: none;
+}
+.smooth-alert.show{
+  pointer-events: auto;
+}
+
+
+/* ======================
+   ALERTA SMOOTH — VARIAÇÃO LOJA FECHADA
+   aumenta somente este aviso específico
+   ====================== */
+#smooth-alert.is-store-closed .smooth-alert-box{
+  width: min(92vw, 420px);
+  max-width: 420px;
+}
+
+#smooth-alert.is-store-closed #smooth-alert-text{
+  max-height: none;
+  overflow: visible;
+}
+
+
+/* =========================
+   BANNER: NOVA VERSÃO (PWA)
+   - Desktop: modal central estilo Smooth Alert
+   - Mobile: banner abaixo do header
+========================= */
+
+/* ✅ CASCA / OVERLAY (DESKTOP) */
+.update-banner{
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+  background: rgba(0,0,0,.35);
+}
+
+/* ✅ quando hidden, some de verdade */
+.update-banner[hidden]{
+  display: none !important;
+}
+
+/* ✅ CAIXA (MODAL) */
+.update-box{
+  width: min(420px, calc(100vw - 36px));
+  background: #ffffff;
+  border-radius: 18px;
+
+  border: 1px solid rgba(74, 46, 42, .18);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+
+  position: relative;
+
+  /* ✅ respiro premium */
+  padding: 14px;
+}
+
+/* ✅ MIOLO (central perfeito, sem ser empurrado pelo X) */
+.update-body{
+  padding-top: 12px; /* espaço pro X não “invadir” */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;         /* respiro entre texto e botão */
+}
+
+/* ✅ TEXTO */
+.update-text{
+  font-size: .95rem;
+  color: var(--brown);
+  line-height: 1.25;
+
+  max-width: 34ch;
+
+  /* ✅ evita “puxar pra esquerda” por causa do X */
+  padding: 0 24px;
+}
+
+/* ✅ AÇÕES */
+.update-actions{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ✅ BOTÃO (menor, premium) */
+.update-btn{
+  border: none;
+  border-radius: 12px;
+  padding: 8px 22px;
+
+  background-color: var(--rose);
+  color: #F7EFE6;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  min-width: 140px;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .update-btn:hover{
+    background-color: var(--brown);
+    transform: translateY(-1px);
+  }
+}
+
+.update-btn:active{
+  background-color: var(--brown);
+  transform: scale(.98);
+}
+
+/* ✅ X pequeno no topo direito */
+.update-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+
+  background-color: var(--brown);
+  color: #F7EFE6;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    background-color .2s ease,
+    transform .15s ease,
+    opacity .15s ease,
+    filter .15s ease;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .update-close:hover{
+    background-color: var(--brown);
+    opacity: .92;
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
+}
+
+.update-close:active{
+  background-color: var(--brown);
+  transform: scale(.95);
+  opacity: 1;
+  filter: brightness(.98);
+}
+
+/* =========================
+   MOBILE: abaixo do header
+========================= */
+@media (max-width: 768px){
+
+  .update-banner{
+    inset: auto;
+    left: 12px;
+    right: 12px;
+
+    /* abaixo do header */
+    top: calc(env(safe-area-inset-top, 0px) + 86px);
+
+    background: transparent; /* sem overlay escuro no mobile */
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .update-box{
+    width: 100%;
+    border-radius: 14px;
+    padding: 12px;
+  }
+
+  .update-body{
+    padding-top: 10px;
+    gap: 12px;
+  }
+
+  .update-text{
+    font-size: 0.92rem;
+    max-width: 36ch;
+    padding: 0 26px;
+  }
+
+  .update-btn{
+    max-width: 210px;
+  }
+}

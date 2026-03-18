@@ -1,0 +1,346 @@
+/* ========================= HEADER / NAV ========================= */
+
+.header {
+  margin-top: 0px;
+  background: var(--rose);
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  /* cobre a safe-area do status bar (PWA / notch) e elimina a faixa */
+  overflow: visible;
+}
+
+/* ---- CONTAINER DO HEADER ---- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px; /* valor original */
+}
+
+/* ---- LOGO ---- */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.logo img {
+  height: 37px;
+  width: auto;
+  display: block;
+  backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+transform: translateZ(0);
+-webkit-transform: translateZ(0);
+}
+
+/* ---- AÇÕES DO MENU (links + botão tema) ---- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+/* ---- LISTA DE LINKS ---- */
+.nav-list {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+/* LINK */
+.nav-list a {
+  color: #F7EFE6;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+  font-family: 'Nexa Heavy', sans-serif;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-list > li > a {
+  display: inline-flex;
+}
+
+/* hover controla movimento em cookies +++ padrão para TODOS os links do menu */
+/*
+.nav-list > li > a:hover,
+.submenu li a:hover {
+  transform: translateY(-1px);
+  opacity: 0.85;
+}
+*/
+
+/* -------------------------- UNDERLINE ANIMADO MENU ---------------- */
+/* UNDERLINE — SOMENTE MENU PRINCIPAL */
+.nav-list > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #F7EFE6;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-list > li > a:hover::after {
+  width: 100%;
+}
+
+/* ---- BOTÃO DE TROCA DE TEMA ---- */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #F7EFE6;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   MENU MOBILE — MOSTRAR HAMBÚRGUER E ESCONDER LINKS
+   ============================================================ */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: #F7EFE6;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================= MOBILE ========================= */
+@media (max-width: 768px) {
+
+  .nav{
+    height: 44px;
+    position: relative; /* 🔑 */
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-list{
+    position: absolute;
+    top: 100%;      /* ✅ cola no final do header */
+    left: 0;        /* ✅ garante largura certinha */
+    right: 0;
+    width: 100%;
+
+    background: var(--rose);
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 2rem 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-5px);
+    transition: opacity .3s ease, transform .3s ease;
+    border-bottom: none;
+  }
+
+  .nav-list.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+
+/* =========================================================
+   SUBMENU — COOKIES (DESKTOP + MOBILE)
+   ========================================================= */
+/*------------largura header mobile-----------*/
+
+
+
+
+.has-submenu {
+  position: relative;
+}
+
+.submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* ---- SETA DO SUBMENU (Cookies) ---- */
+.has-submenu .arrow {
+  color: #F7EFE6;      /* bege */
+  font-size: 0.55rem;  /* proporcional ao texto */
+  line-height: 1;
+  opacity: 0.85;
+  transform: translateY(1px); /* ajuste óptico */
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  font-size: 1.3rem;
+   position: relative;
+  top: 0.3px;     /* desce 0 */
+  left: -4px;    /* direita / esquerda / interrogação */
+
+}
+
+.has-submenu:hover .arrow {
+  transform: translateY(1px);
+  opacity: 1;
+}
+
+
+
+/* submenu base */
+.submenu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  /*background: linear-gradient(135deg, var(--rose), #f3b1b4);*/
+  background: var(--rose);
+  border-radius: 12px;
+  padding: 0.0rem 0;
+  min-width: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-12px, 6px);
+  /*transition: opacity 0.25s ease, transform 0.25s ease;*/
+  z-index: 50;
+}
+
+/* links */
+.submenu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  color: #F7EFE6;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* hover desktop */
+@media (min-width: 769px) {
+  .has-submenu:hover .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-18px, 0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .submenu {
+    position: static;
+    opacity: 100;
+    max-height: 0;
+    overflow: hidden;
+    transform: none;
+    padding: 0;
+    border-radius: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .has-submenu.open .submenu {
+    opacity: 1;
+    max-height: 300px;
+    padding: 0.6rem 0;
+  }
+}
+
+/* SUBMENU — CORRIGIR SPAN HERDANDO MARROM */
+.submenu span {
+  color: #F7EFE6;
+}
+
+.submenu-text {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.submenu-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-list li ul a:hover .submenu-text::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   ESTADO ATIVO POR SCROLL (PRIORITÁRIO)
+   ========================================= */
+.nav-list > li > a.active::after {
+  width: 100% !important;
+}
+
+/* =========================================================
+   SUBMENU MOBILE — GARANTIR CLIQUE NOS LINKS
+   ========================================================= */
+@media (max-width: 768px) {
+  .submenu {
+    pointer-events: auto;
+  }
+
+  .submenu a {
+    pointer-events: auto;
+  }
+}
+
+/* =========================================================
+   BOTÃO TEMA — DESATIVADO
+   ========================================================= */
+
+.theme-toggle {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE (≤768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+ }
+}

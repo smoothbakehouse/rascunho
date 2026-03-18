@@ -1,0 +1,57 @@
+/* ========================= CTA BUTTON — COMPONENTE GLOBAL ========================= */
+/* Este botão será usado em várias páginas (Home, Carrinho, Checkout, etc.) */
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.75rem 1.6rem;
+
+  background: var(--primary);
+  color: white;
+
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(102, 64, 61, 0.18);
+  background: #f3b1b4;
+}
+
+/* ========================= CTA LINK (opcional) ========================= */
+/* Caso você use links-CTA com sublinhado animado */
+
+.cta-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cta-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rose), var(--beige));
+  transition: width 0.3s ease;
+}
+
+.cta-link:hover {
+  transform: translateX(4px);
+  opacity: 0.85;
+}
+
+.cta-link:hover::after {
+  width: 100%;
+}

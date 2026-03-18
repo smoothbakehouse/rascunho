@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline • Smooth</title>
+
+<style>
+:root{
+  --rose:#EF9C9F;
+  --brown:#66403D;
+  --bege:#F7EFE6;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:var(--bege);
+  font-family:system-ui;
+  text-align:center;
+  color:var(--brown);
+}
+
+.logo{
+  width:120px;
+  margin-bottom:30px;
+  opacity:.9;
+}
+
+h1{
+  font-size:1.8rem;
+  margin-bottom:10px;
+}
+
+p{
+  max-width:320px;
+  line-height:1.5;
+  opacity:.8;
+}
+
+.retry{
+  margin-top:30px;
+  background:var(--rose);
+  border:none;
+  padding:12px 28px;
+  border-radius:12px;
+  color: #F7EFE6;
+  font-weight:600;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<img src="img/logo-off.svg" class="logo">
+
+<h1>Você está offline</h1>
+
+<p>
+Sem conexão no momento.<br>
+Assim que a internet voltar,<br>
+Smooth continuará funcionando normalmente.
+</p>
+
+<button class="retry" onclick="location.reload()">
+Tentar novamente
+</button>
+
+</body>
+</html>
