@@ -810,3 +810,15 @@ body{
     transform: scale(1);
   }
 }
+
+
+.checkout-anchor{
+  height: 0;
+  scroll-margin-top: 55px;
+}
+
+@media (max-width: 768px){
+  .checkout-anchor{
+    scroll-margin-top: 45px;
+  }
+}
