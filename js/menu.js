@@ -150,3 +150,23 @@ function setupCarousel(root){
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
 });
+
+
+// TESTE ISOLADO — botão ver pedido
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("mobileBtn");
+
+  if (!btn) return;
+
+  btn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const target = document.getElementById("checkout");
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
