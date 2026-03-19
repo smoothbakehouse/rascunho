@@ -9,8 +9,8 @@
 
 html{
   background: var(--background);
+  scroll-behavior: smooth;
 }
-
 
 :root {
   --font-inter: "Inter", sans-serif;
@@ -24,6 +24,7 @@ html, body {
   background: var(--background);
   line-height: 1.6;
   overflow-x: hidden; /* evita scroll lateral */
+  scroll-behavior: smooth;
 }
 
 .container {
